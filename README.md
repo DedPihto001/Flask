@@ -21,12 +21,24 @@ docker run -d --name my-flask-app -p 5000:5000 my-flask-app
 docker compose up -d --build
 ```
 
-Проверьте приложение, открыв <http://localhost:5000>, или запросите
+Проверка всех эндпоинтов и сохранение ответов в `demo/docker-results.json`:
+
+```powershell
+.\demo\verify.ps1
+```
+
+Скрипт собирает образ, запускает контейнер через Compose и проверяет три
+эндпоинта. Результат появится после успешного запуска Docker; контейнер
+останется работать. Отдельно откройте <http://localhost:5000> или запросите
 `http://localhost:5000/calc/7/5`. Остановка:
 
 ```powershell
 docker compose down
 ```
+
+Пример HTTP-ответов, проверенных локально без Docker, сохранён в
+[`demo/local-results.json`](demo/local-results.json). Он не является
+подтверждением запуска контейнера.
 
 ## Запуск локально без Docker
 

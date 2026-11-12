@@ -1,0 +1,31 @@
+﻿{
+    "runtime":  "Local Flask server (not Docker)",
+    "checkedAt":  "2026-11-12T18:23:14.2127612+03:00",
+    "baseUrl":  "http://localhost:5000",
+    "checks":  [
+                   {
+                       "path":  "/",
+                       "statusCode":  200,
+                       "response":  {
+                                        "message":  "Hello from Flask!"
+                                    }
+                   },
+                   {
+                       "path":  "/info",
+                       "statusCode":  200,
+                       "response":  {
+                                        "app":  "Flask Docker Demo",
+                                        "version":  "1.0.0"
+                                    }
+                   },
+                   {
+                       "path":  "/calc/7/5",
+                       "statusCode":  200,
+                       "response":  {
+                                        "a":  7,
+                                        "b":  5,
+                                        "sum":  12
+                                    }
+                   }
+               ]
+}
